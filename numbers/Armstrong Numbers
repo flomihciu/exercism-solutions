@@ -1,0 +1,34 @@
+"""
+Armstrong Number Checker
+
+An Armstrong number is a number that is the sum of its own digits,
+each raised to the power of the number of digits.
+
+Examples:
+    9     → 9^1 = 9              → Armstrong
+    10    → 1^2 + 0^2 = 1        → Not Armstrong
+    153   → 1^3 + 5^3 + 3^3 = 153 → Armstrong
+    154   → 1^3 + 5^3 + 4^3 = 190 → Not Armstrong
+
+This function checks whether a given number is an Armstrong number.
+"""
+
+def is_armstrong_number(number):
+    # Convert the number to a string to access each digit
+    digits = str(number)
+
+    # Get the number of digits (used as the exponent)
+    num_digits = len(digits)
+
+    # Initialize a running total
+    total = 0
+
+    # Loop through each digit, raise it to the power of num_digits,
+    # and add the result to the total
+    for digit in digits:
+        powered = int(digit) ** num_digits
+        total += powered
+
+    # If the sum of the powered digits equals the original number,
+    # it's an Armstrong number
+    return total == number
