@@ -1,0 +1,37 @@
+Grains of Wheat – Instructions
+
+There once was a wise servant who saved the life of a prince. The king promised to grant him any reward he could imagine. Knowing the king loved chess, the servant requested grains of wheat: one grain on the first square of a chessboard, two on the second, four on the third — doubling with each square. Your task is to calculate how many grains of wheat appear on specific squares, and how many in total.
+
+1. square(number)
+
+Description: Calculates the number of grains on a specific square of the chessboard.
+
+Parameters:
+- number: The square number (must be between 1 and 64)
+
+Returns: The number of grains on that square
+
+Raises:
+- If number is less than 1 or greater than 64, raise a ValueError
+- Use this message: "square must be between 1 and 64"
+
+Example:
+square(3) → 4
+square(64) → 9223372036854775808
+
+2. total()
+
+Description: Calculates the total number of grains on all 64 squares of the chessboard.
+
+Returns: The sum of grains on all squares
+
+Formula: Total = 2^64 - 1
+
+Example:
+total() → 18446744073709551615
+
+Exception Reminder:
+
+When raising an exception, always include a clear and descriptive message. This improves readability and helps with debugging.
+
+Required message when input is out of range: "square must be between 1 and 64"
