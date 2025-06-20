@@ -1,0 +1,56 @@
+Currency Exchange Calculator – Instructions
+Your friend Chandler plans to visit exotic countries around the world. However, his math skills aren’t strong, and he’s worried about being scammed by currency exchange booths. He’s asked you to build a currency calculator to help him out.
+
+Below are the functions you need to create:
+
+1. exchange_money(budget, exchange_rate)
+Description: Estimates the amount of foreign currency received after exchanging.
+Parameters:
+  - budget: The amount of domestic currency Chandler wants to exchange
+  - exchange_rate: The cost of 1 unit of foreign currency in domestic currency
+Returns: The amount of foreign currency received
+Example: exchange_money(127.5, 1.2) → 106.25
+
+2. get_change(budget, exchanging_value)
+Description: Calculates the amount of money remaining after a portion is exchanged.
+Parameters:
+  - budget: Total amount before the exchange
+  - exchanging_value: Amount to exchange
+Returns: Remaining budget after exchange
+Example: get_change(127.5, 120) → 7.5
+
+3. get_value_of_bills(denomination, number_of_bills)
+Description: Calculates the total value of currency bills received.
+Parameters:
+  - denomination: Value of a single bill
+  - number_of_bills: Number of bills received
+Returns: Total value from the booth (excludes any fractional remainder)
+Example: get_value_of_bills(5, 128) → 640
+
+4. get_number_of_bills(amount, denomination)
+Description: Determines how many full bills Chandler can get from the given amount.
+Parameters:
+  - amount: The total amount of money
+  - denomination: Value of each bill
+Returns: Number of whole bills that fit into the amount
+Example: get_number_of_bills(127.5, 5) → 25
+
+5. get_leftover_of_bills(amount, denomination)
+Description: Calculates how much money is left over after converting to full bills.
+Parameters:
+  - amount: The total amount of money
+  - denomination: Value of each bill
+Returns: Leftover amount that the booth keeps
+Example: get_leftover_of_bills(127.5, 20) → 7.5
+
+6. exchangeable_value(budget, exchange_rate, spread, denomination)
+Description: Calculates the maximum value (in full bills) Chandler can get after accounting for the exchange rate and the spread (fee).
+Parameters:
+  - budget: The total amount to exchange
+  - exchange_rate: Rate of 1 unit of foreign currency in domestic currency
+  - spread: Fee percentage (e.g., 10 for 10%)
+  - denomination: Value of each bill
+Returns: Maximum value in whole bills (as an integer)
+Examples:
+  exchangeable_value(127.25, 1.20, 10, 20) → 80
+  exchangeable_value(127.25, 1.20, 10, 5) → 95
