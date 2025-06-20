@@ -1,0 +1,21 @@
+def square(number):
+    # Returns the number of grains on a given square of the chessboard.
+    # The number of grains doubles on each square.
+    # Square 1 has 1 grain, which is 2^0
+    # So, square n has 2^(n - 1) grains
+    # The -1 adjusts because counting starts at square 1, but exponents start at 0.
+
+    if number in range(2, 65):
+        return 2 ** (number - 1)
+    elif number == 1:
+        return 1
+    else:
+        raise ValueError("square must be between 1 and 64")
+
+
+def total():
+    # Returns the total number of grains on the chessboard.
+    # This is the sum of the geometric series: 2^0 + 2^1 + 2^2 + ... + 2^63
+    # The formula for this sum is: 2^64 - 1
+    # The -1 subtracts the extra 1 included by 2^64 (which would represent an imaginary 65th square)
+    return 2 ** 64 - 1
